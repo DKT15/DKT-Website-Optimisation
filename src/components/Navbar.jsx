@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { FileText } from "lucide-react";
 
 export default function Navbar({ section, setSection }) {
   const [open, setOpen] = useState(false);
@@ -63,6 +64,9 @@ export default function Navbar({ section, setSection }) {
             Contact
           </NavLink>
         </nav>
+        <div>
+          <a href=""></a>
+        </div>
       </div>
     </header>
   );
@@ -71,48 +75,6 @@ export default function Navbar({ section, setSection }) {
 {
   /*
 
-        <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-700 lg:flex">
-          {page === "home" ? (
-            <>
-              {homeLinks.map(([label, hash]) => (
-                <button
-                  key={label}
-                  onClick={() => go("home", hash)}
-                  className="transition hover:text-[#00bf63]"
-                >
-                  {label}
-                </button>
-              ))}
-              <button
-                onClick={() => go("contact")}
-                className="transition hover:text-[#00bf63]"
-              >
-                Contact
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                onClick={() => go("home")}
-                className="transition hover:text-[#00bf63]"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => go("project")}
-                className="transition hover:text-[#00bf63]"
-              >
-                Project
-              </button>
-              <button
-                onClick={() => go("contact")}
-                className="transition hover:text-[#00bf63]"
-              >
-                Contact
-              </button>
-            </>
-          )}
-        </nav>
 
         <div className="hidden items-center gap-3 sm:flex">
           <Button variant="secondary" href="/one-pager.pdf">

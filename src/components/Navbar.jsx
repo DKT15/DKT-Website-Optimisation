@@ -7,20 +7,22 @@ export default function Navbar() {
 
   const closeMenu = () => setOpen(false);
 
-  const navLinkClass = ({ isActive }) => {
+  const navLinkClass = ({ isActive }) =>
     isActive ? "text-[#00bf63]" : "transition hover:text-[#00bf63]";
-  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-900/5 bg-[#eef4f0]/85 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-1 px-2 py-2.5 min-[420px]:gap-2 min-[420px]:px-3 sm:px-5 sm:py-4 md:px-8">
         <Link
           to="/"
           onClick={closeMenu}
-          className="flex items-center gap-3 text-left"
+          className="flex shrink-0 items-center gap-3 text-left"
         >
-          <span className="text-3xl font-black tracking-tight text-[#00bf63]">
+          <span className="text-xl font-black tracking-tight text-[#00bf63] min-[420px]:text-2xl sm:text-3xl">
             DKT
+          </span>
+          <span className="hidden text-xs font-medium text-slate-700 sm:block">
+            Website Optimisation Specialist
           </span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-700 lg:flex">
@@ -43,53 +45,42 @@ export default function Navbar() {
             Contact
           </NavLink>
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex min-w-0 items-center gap-1 min-[420px]:gap-1.5 sm:gap-2">
           <a
             href="./assets/website-optimisation-for-small-businesses.pdf"
             target="_blank"
-            className="
-                    inline-flex items-center justify-center gap-2
-                    rounded-full border border-slate-300
-                    bg-white/70 backdrop-blur-xl
-                    text-slate-900 font-semibold transition
-                    hover:border-[#00bf63] hover:text-[#00bf63]
-
-                    px-3 py-2 text-[11px]
-                    sm:px-4 sm:py-2.5 sm:text-xs
-                    md:px-5 md:py-3 md:text-sm"
+            className="inline-flex shrink items-center justify-center gap-1 rounded-full border border-slate-300 bg-white/70 px-1.5 py-1 text-[8px] font-semibold text-slate-900 backdrop-blur-xl transition hover:border-[#00bf63] hover:text-[#00bf63] min-[420px]:px-2.5 min-[420px]:py-1.5 min-[420px]:text-[10px] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs md:px-5 md:py-3 md:text-sm"
             rel="noopener noreferrer"
           >
-            <FileText size={17} />
-            <span>View One-Pager</span>
+            <FileText
+              size={10}
+              className="shrink-0 min-[420px]:size-3 sm:size-4"
+            />
+            <span className="whitespace-nowrap">View One-Pager</span>
           </a>
           <Link
             to="/contact"
-            className="
-                    inline-flex items-center justify-center gap-2
-                    rounded-full bg-[#00bf63]
-                    text-slate-950 font-semibold
-                    shadow-lg shadow-[#00bf63]/20
-                    transition hover:bg-[#18d875]
-
-                    px-3 py-2 text-[11px]
-                    sm:px-4 sm:py-2.5 sm:text-xs
-                    md:px-5 md:py-3 md:text-sm"
+            className="inline-flex shrink items-center justify-center gap-1 rounded-full bg-[#00bf63] px-1.5 py-1 text-[8px] font-semibold text-slate-950 shadow-lg shadow-[#00bf63]/20 transition hover:bg-[#18d875] min-[420px]:px-2.5 min-[420px]:py-1.5 min-[420px]:text-[10px] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs md:px-5 md:py-3 md:text-sm"
           >
-            <Mail size={17} />
-            <span>Email Me</span>
+            <Mail size={10} className="shrink-0 min-[420px]:size-3 sm:size-4" />
+            <span className="whitespace-nowrap">Email Me</span>
           </Link>
         </div>
         <button
           onClick={() => setOpen((value) => !value)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-900 lg:hidden"
+          className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-900 min-[420px]:h-9 min-[420px]:w-9 sm:h-11 sm:w-11 lg:hidden"
           aria-label="Toggle menu"
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? (
+            <X size={14} className="min-[420px]:size-4 sm:size-5" />
+          ) : (
+            <Menu size={14} className="min-[420px]:size-4 sm:size-5" />
+          )}
         </button>
       </div>
       {open && (
         <div className="lg:hidden">
-          <div className="mx-5 mb-4 rounded-3xl border border-slate-200 bg-white/95 p-4 shadow-xl">
+          <div className="mx-2 mb-4 rounded-3xl border border-slate-200 bg-white/95 p-4 shadow-xl sm:mx-5">
             <div className="flex flex-col gap-2 text-sm font-semibold text-slate-700">
               <Link
                 to="/"

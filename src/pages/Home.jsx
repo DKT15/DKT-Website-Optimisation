@@ -267,9 +267,11 @@ export default function HomePage() {
               Send a few details and I’ll get back to you as soon as possible.
             </p>
           </div>
-          <Button onClick={() => setPage("contact")}>
-            Go to contact form <Send size={18} />
-          </Button>
+          <Link to="/contact">
+            <Button>
+              Go to contact form <Send size={18} />
+            </Button>
+          </Link>
         </div>
       </section>
     </main>

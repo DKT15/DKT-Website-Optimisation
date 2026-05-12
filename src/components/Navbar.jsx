@@ -51,7 +51,7 @@ export default function Navbar() {
           <a
             href="./assets/website-optimisation-for-small-businesses.pdf"
             target="_blank"
-            className="inline-flex shrink items-center justify-center gap-1 rounded-full border border-slate-300 bg-white/70 px-1.5 py-1 text-[8px] font-semibold text-slate-900 backdrop-blur-xl transition hover:border-[#00bf63] hover:text-[#00bf63] min-[420px]:px-2.5 min-[420px]:py-1.5 min-[420px]:text-[10px] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs md:px-5 md:py-3 md:text-sm"
+            className="inline-flex shrink items-center justify-center gap-1 rounded-full border border-slate-300 bg-white/70 px-2 py-1.5 text-[10px] font-semibold text-slate-900 backdrop-blur-xl transition hover:border-[#00bf63] hover:text-[#00bf63] min-[420px]:px-2.5 min-[420px]:py-1.5 min-[420px]:text-[10px] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs md:px-5 md:py-3 md:text-sm"
             rel="noopener noreferrer"
           >
             <FileText
@@ -62,7 +62,7 @@ export default function Navbar() {
           </a>
           <Link
             to="/contact"
-            className="inline-flex shrink items-center justify-center gap-1 rounded-full bg-[#00bf63] px-1.5 py-1 text-[8px] font-semibold text-slate-950 shadow-lg shadow-[#00bf63]/20 transition hover:bg-[#18d875] min-[420px]:px-2.5 min-[420px]:py-1.5 min-[420px]:text-[10px] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs md:px-5 md:py-3 md:text-sm"
+            className="inline-flex shrink items-center justify-center gap-1 rounded-full bg-[#00bf63] px-2 py-1.5 text-[10px] font-semibold text-slate-950 shadow-lg shadow-[#00bf63]/20 transition hover:bg-[#18d875] min-[420px]:px-2.5 min-[420px]:py-1.5 min-[420px]:text-[10px] sm:gap-2 sm:px-4 sm:py-2.5 sm:text-xs md:px-5 md:py-3 md:text-sm"
           >
             <Mail size={10} className="shrink-0 min-[420px]:size-3 sm:size-4" />
             <span className="whitespace-nowrap">Email Me</span>

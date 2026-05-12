@@ -1,0 +1,277 @@
+import { Link } from "react-router-dom";
+// import { useState } from "react";
+import AnimatedShapes from "../components/AnimatedShapes";
+import SectionHeader from "../components/SectionHeader";
+import Button from "../components/Button";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ExternalLink,
+  FileText,
+  Gauge,
+  MousePointerClick,
+  Search,
+  Send,
+  ShieldCheck,
+} from "lucide-react";
+
+export default function HomePage() {
+  const services = [
+    {
+      icon: Search,
+      title: "Website Audits",
+      text: "A clear review of what may be limiting your website’s UX, SEO, speed and accessibility.",
+    },
+    {
+      icon: MousePointerClick,
+      title: "UX & Conversion Optimisation",
+      text: "Clearer journeys, stronger calls-to-action and fewer barriers to getting in touch.",
+    },
+    {
+      icon: Gauge,
+      title: "SEO & Performance Improvements",
+      text: "Practical improvements to visibility, speed and how well your website supports users.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Accessibility Improvements",
+      text: "Improvements that make your website easier to use for a wider range of visitors.",
+    },
+  ];
+
+  return (
+    <main>
+      <section className="relative min-h-[calc(100vh-77px)] overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8 md:py-24">
+        <AnimatedShapes />
+        <div className="relative mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl"
+          >
+            <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#00bf63]">
+              Website optimisation that drives results
+              <span className="h-px w-12 bg-[#00bf63]/50" />
+            </p>
+            <h1 className="text-6xl font-black leading-[0.95] tracking-[-0.06em] text-slate-950 md:text-8xl">
+              Helping your website work
+              <br />
+              <span className="text-[#00bf63]">better.</span>
+            </h1>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-700">
+              I help small businesses improve underperforming websites through
+              better usability, visibility and performance, making it easier for
+              visitors to understand your business and get in touch.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link to="/contact">
+                <Button className="rounded-2xl px-6 py-4">
+                  Request a Website Review <ArrowRight size={18} />
+                </Button>
+              </Link>
+              <Button
+                href="/website-optimisation-for-small-businesses.pdf"
+                variant="secondary"
+                className="rounded-2xl px-6 py-4"
+              >
+                <FileText size={18} /> View One-Pager
+              </Button>
+            </div>
+            <div className="mt-12 flex flex-wrap gap-5 text-sm font-medium text-slate-600">
+              {[
+                "UX & Usability",
+                "SEO & Visibility",
+                "Performance",
+                "Accessibility",
+              ].map((item) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  <CheckCircle2 size={16} className="text-[#00bf63]" /> {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section
+        id="project"
+        className="relative overflow-hidden bg-[#f7faf7] px-5 py-24 md:px-8"
+      >
+        <AnimatedShapes density="low" />
+        <div className="relative mx-auto max-w-7xl border-t border-slate-200 pt-16">
+          <SectionHeader
+            eyebrow="Recent Work"
+            title="Office of the Small Business Commissioner & Fair Payment Code"
+          />
+          <div className="max-w-3xl">
+            <p className="text-lg leading-8 text-slate-700">
+              Led the relaunch and ongoing optimisation of the OSBC website and
+              Fair Payment Code site, improving usability, accessibility and
+              engagement. The project was later recognised with a Vega Award
+              which recognised its strong user experience and design as part of
+              a larger project.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {["UX", "Accessibility", "Performance", "Engagement"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-[#00bf63]/10 px-3 py-1 text-xs font-semibold text-[#007c42]"
+                  >
+                    {tag}
+                  </span>
+                ),
+              )}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/recentwork"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#008a49] hover:text-[#00bf63]"
+              >
+                View More Projects <ArrowRight size={16} />
+              </Link>
+              <a
+                href="https://www.smallbusinesscommissioner.gov.uk/"
+                target="_blank"
+                className="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-[#00bf63]"
+              >
+                Visit Live Site <ExternalLink size={16} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="bg-[#eef4f0] px-5 py-24 md:px-8">
+        <div className="mx-auto max-w-7xl border-t border-slate-200 pt-16">
+          <SectionHeader
+            eyebrow="Services"
+            title="How I can help"
+            text="Practical website improvements focused on usability, visibility, performance and trust."
+          />
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={service.title}
+                  className="rounded-[1.75rem] border border-slate-200 bg-white/80 p-7 shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+                >
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#00bf63]/10 text-[#00bf63]">
+                    <Icon size={26} />
+                  </div>
+                  <h3 className="text-xl font-black text-slate-950">
+                    {service.title}
+                  </h3>
+                  <p className="mt-4 leading-7 text-slate-600">
+                    {service.text}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="process" className="bg-[#f7faf7] px-5 py-24 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader eyebrow="Process" title="Simple. Clear. Effective." />
+          <div className="grid gap-6 md:grid-cols-4">
+            {[
+              [
+                "Audit",
+                "I review your site and identify what may be holding it back.",
+              ],
+              [
+                "Plan",
+                "You receive clear priorities based on what will be most useful.",
+              ],
+              [
+                "Optimise",
+                "I implement agreed improvements across UX, SEO and performance.",
+              ],
+              ["Review", "You get a simple summary of what changed and why."],
+            ].map(([title, text], index) => (
+              <div
+                key={title}
+                className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-lg shadow-slate-900/5"
+              >
+                <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-full bg-[#00bf63] font-black text-slate-950">
+                  {index + 1}
+                </div>
+                <h3 className="text-xl font-black text-slate-950">{title}</h3>
+                <p className="mt-4 leading-7 text-slate-600">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="bg-[#eef4f0] px-5 py-24 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Testimonials"
+            title="What clients say"
+            text="A space for testimonials as I build out more client work and case studies."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              "Danté explained the issues clearly and gave us practical next steps.",
+              "The audit made it much easier to understand what needed improving first.",
+              "Clear, helpful and easy to work with from start to finish.",
+            ].map((quote) => (
+              <div
+                key={quote}
+                className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-lg shadow-slate-900/5"
+              >
+                <p className="text-5xl font-black text-[#00bf63]">“</p>
+                <p className="mt-3 leading-7 text-slate-700">{quote}</p>
+                <p className="mt-6 text-sm font-semibold text-slate-500">
+                  Client testimonial placeholder
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="bg-[#f7faf7] px-5 py-24 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <SectionHeader
+            eyebrow="About"
+            title="Website optimisation with practical experience behind it."
+          />
+          <div className="text-lg leading-8 text-slate-700">
+            <p>
+              I’m Danté Kellman-Thompson, a Website Optimisation Specialist with
+              experience managing, relaunching and improving public-facing
+              websites at a national level.
+            </p>
+            <p className="mt-5">
+              My focus is on practical improvements that make websites easier to
+              use, easier to understand and better set up to support enquiries.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#eef4f0] px-5 py-24 md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-[2rem] border border-[#00bf63]/20 bg-white/70 p-8 shadow-xl shadow-slate-900/5 backdrop-blur-xl md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 className="text-3xl font-black tracking-[-0.03em] text-slate-950">
+              Ready to improve your website?
+            </h2>
+            <p className="mt-3 text-slate-600">
+              Send a few details and I’ll get back to you as soon as possible.
+            </p>
+          </div>
+          <Button onClick={() => setPage("contact")}>
+            Go to contact form <Send size={18} />
+          </Button>
+        </div>
+      </section>
+    </main>
+  );
+}

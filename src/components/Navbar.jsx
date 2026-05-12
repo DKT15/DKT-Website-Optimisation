@@ -5,11 +5,13 @@ import { FileText, Mail, X, Menu } from "lucide-react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  // sets the menu to close
   const closeMenu = () => setOpen(false);
 
   const navLinkClass = ({ isActive }) =>
     isActive ? "text-[#00bf63]" : "transition hover:text-[#00bf63]";
 
+  // Tailwind CSS classes used throughout the code for styling.
   return (
     <header className="sticky top-0 z-50 border-b border-slate-900/5 bg-[#eef4f0]/85 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-1 px-2 py-2.5 min-[420px]:gap-2 min-[420px]:px-3 sm:px-5 sm:py-4 md:px-8">
@@ -66,6 +68,7 @@ export default function Navbar() {
             <span className="whitespace-nowrap">Email Me</span>
           </Link>
         </div>
+        {/* Menu Toggle */}
         <button
           onClick={() => setOpen((value) => !value)}
           className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white/70 text-slate-900 min-[420px]:h-9 min-[420px]:w-9 sm:h-11 sm:w-11 lg:hidden"
@@ -78,6 +81,7 @@ export default function Navbar() {
           )}
         </button>
       </div>
+      {/* Items that are displayed when the menu is open */}
       {open && (
         <div className="lg:hidden">
           <div className="mx-2 mb-4 rounded-3xl border border-slate-200 bg-white/95 p-4 shadow-xl sm:mx-5">

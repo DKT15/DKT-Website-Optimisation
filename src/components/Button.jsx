@@ -1,3 +1,5 @@
+// Button styling.
+
 export default function Button({
   children,
   href,

@@ -23,9 +23,6 @@ export default function Navbar() {
           <span className="text-xl font-black tracking-tight text-[#00bf63] min-[420px]:text-2xl sm:text-3xl">
             DKT
           </span>
-          <span className="hidden text-xs font-medium text-slate-700 sm:block">
-            Website Optimisation Specialist
-          </span>
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-700 lg:flex">
           <a href="/#services" className="transition hover:text-[#00bf63]">

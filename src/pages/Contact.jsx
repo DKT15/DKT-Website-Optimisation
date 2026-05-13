@@ -1,4 +1,23 @@
-function ContactPage() {
+import { Mail, Send } from "lucide-react";
+import AnimatedShapes from "../components/AnimatedShapes";
+import { FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
+
+export default function ContactPage() {
+  // tracking whether or not the form has been submitted.
+  const [submitted, setSubmitted] = useState(false);
+
+  // tracking the loading state. If the form is loading then sending will be displayed in the button to let the user know.
+  const [loading, setLoading] = React.useState(false);
+
+  const handleFormSubmit = async (event) => {
+    // preventing the form submit from refreshing the page.
+    event.preventDefault();
+
+    // set loading to true before the async call below.
+    setLoading(true);
+  };
+
   return (
     <main className="relative overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8">
       <AnimatedShapes density="low" />
@@ -19,13 +38,16 @@ function ContactPage() {
               href="mailto:dante@dantekellman.co.uk"
               className="flex items-center gap-4 rounded-3xl bg-white/70 p-5 font-semibold shadow-lg shadow-slate-900/5 backdrop-blur-xl"
             >
-              <Mail className="text-[#00bf63]" /> dante@dantekellman.co.uk
+              <Mail size={18} className="text-[#00bf63]" />{" "}
+              dante@dantekellman.co.uk
             </a>
             <a
-              href="https://www.linkedin.com/in/your-linkedin"
+              href="https://www.linkedin.com/in/dant%C3%A9-kellman-thompson-8b720720a/"
               className="flex items-center gap-4 rounded-3xl bg-white/70 p-5 font-semibold shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+              target="_blank"
             >
-              <Linkedin className="text-[#00bf63]" /> Connect on LinkedIn
+              <FaLinkedin size={18} className="text-[#00bf63]" /> Connect on
+              LinkedIn
             </a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+// Code for animated shapes.
 export default function AnimatedShapes({ density = "normal" }) {
   const circles = [
     {

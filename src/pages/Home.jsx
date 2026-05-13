@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import AnimatedShapes from "../components/AnimatedShapes";
 import SectionHeader from "../components/SectionHeader";
+import { testimonials } from "../data/testimonials";
 import Button from "../components/Button";
 import { motion } from "framer-motion";
 import {
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 
 export default function HomePage() {
+  // This is to be later mapped below for the services section.
   const services = [
     {
       icon: Search,
@@ -39,6 +41,7 @@ export default function HomePage() {
     },
   ];
 
+  // First two sectinos to have animated shapes.
   return (
     <main>
       <section className="relative min-h-[calc(100vh-77px)] overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8 md:py-24">
@@ -94,7 +97,7 @@ export default function HomePage() {
       </section>
 
       <section
-        id="project"
+        id="recentwork"
         className="relative overflow-hidden bg-[#f7faf7] px-5 py-24 md:px-8"
       >
         <AnimatedShapes density="low" />
@@ -208,30 +211,62 @@ export default function HomePage() {
       </section>
 
       <section id="testimonials" className="bg-[#eef4f0] px-5 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            eyebrow="Testimonials"
-            title="What clients say"
-            text="A space for testimonials as I build out more client work and case studies."
-          />
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              "Danté explained the issues clearly and gave us practical next steps.",
-              "The audit made it much easier to understand what needed improving first.",
-              "Clear, helpful and easy to work with from start to finish.",
-            ].map((quote) => (
-              <div
-                key={quote}
-                className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-lg shadow-slate-900/5"
-              >
-                <p className="text-5xl font-black text-[#00bf63]">“</p>
-                <p className="mt-3 leading-7 text-slate-700">{quote}</p>
-                <p className="mt-6 text-sm font-semibold text-slate-500">
-                  Client testimonial placeholder
+        <div className="mx-auto max-w-5xl">
+          <SectionHeader eyebrow="Testimonial" title="Professional Feedback" />
+
+          {/* Single featured testimonial */}
+
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/5 md:p-12"
+            >
+              <p className="text-6xl font-black leading-none text-[#00bf63]">
+                “
+              </p>
+              <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-700">
+                {testimonial.quote}
+              </p>
+
+              <div className="mt-8">
+                <p className="font-bold text-slate-950">
+                  {testimonial.company}
+                </p>
+
+                <p className="text-sm text-slate-500">
+                  {testimonial.description}
                 </p>
               </div>
-            ))}
+            </div>
+          ))}
+
+          {/*
+      Future multi-testimonial layout
+
+      <div className="grid gap-6 md:grid-cols-3">
+          <div
+            key={testimonial.id}
+            className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-lg shadow-slate-900/5"
+          >
+            <p className="text-5xl font-black text-[#00bf63]">
+              “
+            </p>
+
+            <p className="mt-3 leading-7 text-slate-700">
+              {testimonial.quote}
+            </p>
+            <div className="mt-8">
+                <p className="font-bold text-slate-950">
+                  {testimonial.company}
+                </p>
+                <p className="mt-6 text-sm font-semibold text-slate-500">
+                  {testimonial.description}
+                </p>
+              </div>
           </div>
+        ))}
+      </div>
+    */}
         </div>
       </section>
 

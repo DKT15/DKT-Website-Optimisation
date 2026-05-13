@@ -1,3 +1,5 @@
+// Styling for the headers needed for each section.
+
 export default function SectionHeader({
   eyebrow,
   title,

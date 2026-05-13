@@ -22,11 +22,18 @@ export default function ContactPage() {
     event.preventDefault();
 
     const form = event.currentTarget;
+    const formData = new FormData(form);
+
     // set loading to true before the async call below.
     setLoading(true);
 
     // No current error
     setError("");
+
+    if (formData.get("company")) {
+      setLoading(false);
+      return;
+    }
 
     try {
       const sentEmail = await emailjs.sendForm(
@@ -130,6 +137,15 @@ export default function ContactPage() {
                   required.
                 </p>
               </div>
+
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
 
               <div className="grid gap-5 md:grid-cols-2">
                 <label

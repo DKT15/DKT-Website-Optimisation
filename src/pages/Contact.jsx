@@ -30,12 +30,12 @@ export default function ContactPage() {
       const sentEmail = await emailjs.sendForm(
         serviceId,
         templateId,
-        event.target,
+        event.currentTarget,
         publicKey,
       );
 
       if (sentEmail.text === "OK") {
-        event.target.reset();
+        event.currentTarget.reset();
         setSubmitted(true);
       }
     } catch (err) {

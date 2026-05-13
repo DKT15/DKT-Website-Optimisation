@@ -1,9 +1,12 @@
 // Button styling.
+import { Link } from "react-router-dom";
 
 export default function Button({
   children,
   href,
+  to,
   onClick,
+  type = "button",
   variant = "primary",
   className = "",
 }) {
@@ -14,17 +17,27 @@ export default function Button({
       ? "bg-[#00bf63] text-slate-950 hover:bg-[#18d875] shadow-lg shadow-[#00bf63]/20"
       : "border border-slate-300 bg-white/70 text-slate-900 backdrop-blur-xl hover:border-[#00bf63] hover:text-[#00bf63]";
 
-  if (onClick) {
+  const classes = `${base} ${styles} ${className}`;
+
+  if (to) {
     return (
-      <button onClick={onClick} className={`${base} ${styles} ${className}`}>
+      <Link to={to} className={classes}>
         {children}
-      </button>
+      </Link>
+    );
+  }
+
+  if (href) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
     );
   }
 
   return (
-    <a href={href} className={`${base} ${styles} ${className}`}>
+    <button type={type} onClick={onClick} className={classes}>
       {children}
-    </a>
+    </button>
   );
 }

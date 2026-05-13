@@ -2,20 +2,48 @@ import { Mail, Send } from "lucide-react";
 import AnimatedShapes from "../components/AnimatedShapes";
 import { FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
   // tracking whether or not the form has been submitted.
   const [submitted, setSubmitted] = useState(false);
 
   // tracking the loading state. If the form is loading then sending will be displayed in the button to let the user know.
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState("");
 
   const handleFormSubmit = async (event) => {
     // preventing the form submit from refreshing the page.
     event.preventDefault();
-
     // set loading to true before the async call below.
     setLoading(true);
+
+    // No current error
+    setError("");
+
+    try {
+      const sentEmail = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        event.target,
+        publicKey,
+      );
+
+      if (sentEmail.text === "OK") {
+        event.target.reset();
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -37,73 +65,182 @@ export default function ContactPage() {
             <a
               href="mailto:dante@dantekellman.co.uk"
               className="flex items-center gap-4 rounded-3xl bg-white/70 p-5 font-semibold shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+              aria-label="Email Danté at dante@dantekellman.co.uk"
             >
-              <Mail size={18} className="text-[#00bf63]" />{" "}
+              <Mail size={18} className="text-[#00bf63]" aria-hidden="true" />{" "}
               dante@dantekellman.co.uk
             </a>
             <a
               href="https://www.linkedin.com/in/dant%C3%A9-kellman-thompson-8b720720a/"
               className="flex items-center gap-4 rounded-3xl bg-white/70 p-5 font-semibold shadow-lg shadow-slate-900/5 backdrop-blur-xl"
               target="_blank"
+              rel="noreferrer"
+              aria-label="Connect with Danté on LinkedIn"
             >
-              <FaLinkedin size={18} className="text-[#00bf63]" /> Connect on
-              LinkedIn
+              <FaLinkedin
+                size={18}
+                className="text-[#00bf63]"
+                aria-hidden="true"
+              />{" "}
+              Connect on LinkedIn
             </a>
           </div>
         </div>
+        {submitted ? (
+          <div
+            className="rounded-[2rem] border border-[#00bf63]/20 bg-white/80 p-8 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl md:p-10"
+            role="status"
+            aria-live="polite"
+          >
+            <h2 className="text-2xl font-black text-slate-950">
+              Thanks for getting in touch.
+            </h2>
 
-        <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl md:p-8">
-          <form className="grid gap-5">
-            <div className="grid gap-5 md:grid-cols-2">
-              <label className="grid gap-2 text-sm font-semibold text-slate-700">
-                Your name
-                <input
-                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
-                  placeholder="Your name"
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-slate-700">
-                Your email
-                <input
-                  type="email"
-                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
-                  placeholder="you@example.com"
-                />
-              </label>
-            </div>
-            <label className="grid gap-2 text-sm font-semibold text-slate-700">
-              Business name
-              <input
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
-                placeholder="Business name"
-              />
-            </label>
-            <label className="grid gap-2 text-sm font-semibold text-slate-700">
-              Website URL optional
-              <input
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
-                placeholder="https://"
-              />
-            </label>
-            <label className="grid gap-2 text-sm font-semibold text-slate-700">
-              How can I help?
-              <textarea
-                rows={7}
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
-                placeholder="Tell me a bit about your website and what you’d like help with."
-              />
-            </label>
-            <button
-              type="button"
-              className="inline-flex w-fit items-center gap-2 rounded-2xl bg-[#00bf63] px-6 py-4 text-sm font-bold text-slate-950 transition hover:bg-[#16d978]"
-            >
-              Send Message <Send size={18} />
-            </button>
-            <p className="text-sm text-slate-500">
-              Your information will only be used to respond to your enquiry.
+            <p className="mt-4 leading-7 text-slate-700">
+              I’ve received your message and look forward to speaking with you
+              soon.
             </p>
-          </form>
-        </div>
+          </div>
+        ) : (
+          <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl md:p-8">
+            <form
+              onSubmit={handleFormSubmit}
+              className="grid gap-5"
+              aria-labelledby="contact-form-title"
+            >
+              <div>
+                <h2
+                  id="contact-form-title"
+                  className="text-2xl font-black text-slate-950"
+                >
+                  Send an enquiry
+                </h2>
+
+                <p className="mt-2 text-sm text-slate-500">
+                  Fields marked with <span aria-hidden="true">*</span> are
+                  required.
+                </p>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2">
+                <label
+                  htmlFor="name"
+                  className="grid gap-2 text-sm font-semibold text-slate-700"
+                >
+                  <span className="flex items-center gap-1">
+                    Your name <span aria-hidden="true">*</span>
+                  </span>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    autoComplete="name"
+                    aria-label="Your name"
+                    placeholder="Your name"
+                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
+                  />
+                </label>
+
+                <label
+                  htmlFor="email"
+                  className="grid gap-2 text-sm font-semibold text-slate-700"
+                >
+                  <span className="flex items-center gap-1">
+                    Your email <span aria-hidden="true">*</span>
+                  </span>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    aria-label="Your email address"
+                    placeholder="you@example.com"
+                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
+                  />
+                </label>
+              </div>
+
+              <label
+                htmlFor="business"
+                className="grid gap-2 text-sm font-semibold text-slate-700"
+              >
+                Business name
+                <input
+                  id="business"
+                  name="business"
+                  type="text"
+                  autoComplete="organization"
+                  aria-label="Business name"
+                  placeholder="Business name"
+                  required
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
+                />
+              </label>
+
+              <label
+                htmlFor="website"
+                className="grid gap-2 text-sm font-semibold text-slate-700"
+              >
+                <span className="flex items-center gap-1">
+                  Website URL{" "}
+                  <span className="font-normal text-slate-500">optional</span>
+                </span>
+                <input
+                  id="website"
+                  name="website"
+                  type="url"
+                  inputMode="url"
+                  autoComplete="url"
+                  aria-label="Website URL, optional"
+                  placeholder="https://"
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
+                />
+              </label>
+
+              <label
+                htmlFor="message"
+                className="grid gap-2 text-sm font-semibold text-slate-700"
+              >
+                <span className="flex items-center gap-1">
+                  How can I help? <span aria-hidden="true">*</span>
+                </span>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  required
+                  aria-label="How can I help?"
+                  placeholder="Tell me a bit about your website and what you’d like help with."
+                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-[#00bf63]"
+                />
+              </label>
+
+              {error && (
+                <p
+                  className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700"
+                  role="alert"
+                >
+                  {error}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="inline-flex w-fit items-center gap-2 rounded-2xl bg-[#00bf63] px-6 py-4 text-sm font-bold text-slate-950 transition hover:bg-[#16d978] disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {loading ? "Sending..." : "Send Message"}
+                <Send size={18} aria-hidden="true" />
+              </button>
+
+              <p className="text-sm text-slate-500">
+                Your information will only be used to respond to your enquiry.
+              </p>
+            </form>
+          </div>
+        )}
       </div>
     </main>
   );

@@ -11,13 +11,22 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }) =>
     isActive ? "text-[#00bf63]" : "transition hover:text-[#00bf63]";
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    closeMenu();
+  };
+
   // Tailwind CSS classes used throughout the code for styling.
   return (
     <header className="sticky top-0 z-50 border-b border-slate-900/5 bg-[#eef4f0]/85 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-1 px-2 py-2.5 min-[420px]:gap-2 min-[420px]:px-3 sm:px-5 sm:py-4 md:px-8">
         <Link
           to="/"
-          onClick={closeMenu}
+          onClick={scrollToTop}
           className="flex shrink-0 items-center gap-3 text-left"
         >
           <span className="text-xl font-black tracking-tight text-[#00bf63] min-[420px]:text-2xl sm:text-3xl">
@@ -85,39 +94,39 @@ export default function Navbar() {
             <div className="flex flex-col gap-2 text-sm font-semibold text-slate-700">
               <Link
                 to="/"
-                onClick={closeMenu}
+                onClick={scrollToTop}
                 className="rounded-2xl px-4 py-3 text-left hover:bg-slate-50"
               >
                 Home
               </Link>
-              <Link
-                to="/#services"
+              <a
+                href="/#services"
                 onClick={closeMenu}
                 className="rounded-2xl px-4 py-3 text-left hover:bg-slate-50"
               >
                 Services
-              </Link>
-              <Link
-                to="/#process"
+              </a>
+              <a
+                href="/#process"
                 onClick={closeMenu}
                 className="rounded-2xl px-4 py-3 text-left hover:bg-slate-50"
               >
                 Process
-              </Link>
-              <Link
-                to="/#recentwork"
+              </a>
+              <a
+                href="/#recentwork"
                 onClick={closeMenu}
                 className="rounded-2xl px-4 py-3 text-left hover:bg-slate-50"
               >
                 Recent Work
-              </Link>
-              <Link
-                to="/#testimonials"
+              </a>
+              <a
+                href="/#testimonials"
                 onClick={closeMenu}
                 className="rounded-2xl px-4 py-3 text-left hover:bg-slate-50"
               >
                 Testimonials
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -98,7 +98,7 @@ export default function HomePage() {
 
       <section
         id="recentwork"
-        className="relative overflow-hidden bg-[#f7faf7] px-5 py-24 md:px-8"
+        className="scroll-mt-24 relative overflow-hidden bg-[#f7faf7] px-5 py-24 md:px-8"
       >
         <AnimatedShapes density="low" />
         <div className="relative mx-auto max-w-7xl border-t border-slate-200 pt-16">
@@ -145,7 +145,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="bg-[#eef4f0] px-5 py-24 md:px-8">
+      <section
+        id="services"
+        className="scroll-mt-24 bg-[#eef4f0] px-5 py-24 md:px-8"
+      >
         <div className="mx-auto max-w-7xl border-t border-slate-200 pt-16">
           <SectionHeader
             eyebrow="Services"
@@ -176,7 +179,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="process" className="bg-[#f7faf7] px-5 py-24 md:px-8">
+      <section
+        id="process"
+        className="scroll-mt-24 bg-[#f7faf7] px-5 py-24 md:px-8"
+      >
         <div className="mx-auto max-w-7xl">
           <SectionHeader eyebrow="Process" title="Simple. Clear. Effective." />
           <div className="grid gap-6 md:grid-cols-4">
@@ -210,7 +216,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="testimonials" className="bg-[#eef4f0] px-5 py-24 md:px-8">
+      <section
+        id="testimonials"
+        className="scroll-mt-24 bg-[#eef4f0] px-5 py-24 md:px-8"
+      >
         <div className="mx-auto max-w-5xl">
           <SectionHeader eyebrow="Testimonial" title="Professional Feedback" />
 
@@ -270,7 +279,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="bg-[#f7faf7] px-5 py-24 md:px-8">
+      <section
+        id="about"
+        className="scroll-mt-24 bg-[#f7faf7] px-5 py-24 md:px-8"
+      >
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeader
             eyebrow="About"

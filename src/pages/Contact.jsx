@@ -20,6 +20,8 @@ export default function ContactPage() {
   const handleFormSubmit = async (event) => {
     // preventing the form submit from refreshing the page.
     event.preventDefault();
+
+    const form = event.currentTarget;
     // set loading to true before the async call below.
     setLoading(true);
 
@@ -30,12 +32,12 @@ export default function ContactPage() {
       const sentEmail = await emailjs.sendForm(
         serviceId,
         templateId,
-        event.currentTarget,
+        form,
         publicKey,
       );
 
       if (sentEmail.text === "OK") {
-        event.currentTarget.reset();
+        form.reset();
         setSubmitted(true);
       }
     } catch (err) {
@@ -88,7 +90,7 @@ export default function ContactPage() {
         </div>
         {submitted ? (
           <div
-            className="rounded-[2rem] border border-[#00bf63]/20 bg-white/80 p-8 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl md:p-10"
+            className="min-h-[620px] rounded-[2rem] border border-[#00bf63]/20 bg-white/80 p-8 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl md:p-10"
             role="status"
             aria-live="polite"
           >
@@ -100,6 +102,13 @@ export default function ContactPage() {
               I’ve received your message and look forward to speaking with you
               soon.
             </p>
+            <button
+              type="button"
+              onClick={() => setSubmitted(false)}
+              className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:border-[#00bf63] hover:text-[#00bf63]"
+            >
+              Send another message
+            </button>
           </div>
         ) : (
           <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl md:p-8">
@@ -166,7 +175,10 @@ export default function ContactPage() {
                 htmlFor="business"
                 className="grid gap-2 text-sm font-semibold text-slate-700"
               >
-                Business name
+                <span className="flex items-center gap-1">
+                  Business name
+                  <span aria-hidden="true">*</span>
+                </span>
                 <input
                   id="business"
                   name="business"
@@ -229,7 +241,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex w-fit items-center gap-2 rounded-2xl bg-[#00bf63] px-6 py-4 text-sm font-bold text-slate-950 transition hover:bg-[#16d978] disabled:cursor-not-allowed disabled:opacity-70"
+                className="inline-flex cursor-pointer w-fit items-center gap-2 rounded-2xl bg-[#00bf63] px-6 py-4 text-sm font-bold text-slate-950 transition hover:bg-[#16d978] disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {loading ? "Sending..." : "Send Message"}
                 <Send size={18} aria-hidden="true" />

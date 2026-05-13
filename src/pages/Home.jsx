@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { useState } from "react";
 import AnimatedShapes from "../components/AnimatedShapes";
 import SectionHeader from "../components/SectionHeader";
 import Button from "../components/Button";
@@ -52,34 +51,33 @@ export default function HomePage() {
             className="max-w-3xl"
           >
             <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#00bf63]">
-              Website optimisation that drives results
+              Website optimisation focused on user experience
               <span className="h-px w-12 bg-[#00bf63]/50" />
             </p>
-            <h1 className="text-6xl font-black leading-[0.95] tracking-[-0.06em] text-slate-950 md:text-8xl">
-              Helping your website work
-              <br />
+            <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.05em] text-slate-950 sm:text-6xl md:text-8xl">
+              Helping your website work {""}
               <span className="text-[#00bf63]">better.</span>
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
               I help small businesses improve underperforming websites through
               better usability, visibility and performance, making it easier for
               visitors to understand your business and get in touch.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Link to="/contact">
-                <Button className="rounded-2xl px-6 py-4">
+                <Button className="w-full rounded-2xl px-6 py-4 sm:w-auto">
                   Request a Website Review <ArrowRight size={18} />
                 </Button>
               </Link>
               <Button
                 href="/website-optimisation-for-small-businesses.pdf"
                 variant="secondary"
-                className="rounded-2xl px-6 py-4"
+                className="w-full rounded-2xl px-6 py-4 sm:w-auto"
               >
                 <FileText size={18} /> View One-Pager
               </Button>
             </div>
-            <div className="mt-12 flex flex-wrap gap-5 text-sm font-medium text-slate-600">
+            <div className="mt-12 flex flex-wrap gap-5 text-sm font-medium text-slate-600 [@media(max-width:639px)]:justify-center [@media(max-width:639px)]:text-xs">
               {[
                 "UX & Usability",
                 "SEO & Visibility",

@@ -1,15 +1,18 @@
-export default function RecentWork({ setPage }) {
+import { Link } from "react-router-dom";
+import AnimatedShapes from "../components/AnimatedShapes";
+import { ExternalLink, Mail } from "lucide-react";
+import Button from "../components/Button";
+
+export default function RecentWork() {
   return (
     <main className="relative overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8">
       <AnimatedShapes density="low" />
       <div className="relative mx-auto max-w-7xl">
-        <button
-          onClick={() => setPage("home")}
-          className="mb-10 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]"
-        >
-          ← Back to Home
-        </button>
-
+        <Link to="/">
+          <button className="mb-10 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]">
+            ← Back to Home
+          </button>
+        </Link>
         <div className="max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">
             Project case study
@@ -83,14 +86,17 @@ export default function RecentWork({ setPage }) {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="#"
+              href="https://www.smallbusinesscommissioner.gov.uk/"
               className="inline-flex items-center gap-2 rounded-full bg-[#00bf63] px-6 py-4 text-sm font-bold text-slate-950 hover:bg-[#16d978]"
+              target="_blank"
             >
               View Live Website <ExternalLink size={18} />
             </a>
-            <Button onClick={() => setPage("contact")} variant="secondary">
-              Discuss your website <Mail size={18} />
-            </Button>
+            <Link to="/contact">
+              <Button className="cursor-pointer" variant="secondary">
+                Discuss your website <Mail size={18} />
+              </Button>
+            </Link>
           </div>
         </section>
       </div>

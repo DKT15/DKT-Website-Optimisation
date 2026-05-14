@@ -3,6 +3,7 @@ import AnimatedShapes from "../components/AnimatedShapes";
 import { FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Link } from "react-router-dom";
 
 export default function ContactPage() {
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -58,8 +59,15 @@ export default function ContactPage() {
   return (
     <main className="relative overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8">
       <AnimatedShapes density="low" />
+
       <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.75fr_1.25fr]">
         <div>
+          <Link
+            to="/"
+            className="mb-10 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]"
+          >
+            ← Back to Home
+          </Link>
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">
             Get in touch
           </p>

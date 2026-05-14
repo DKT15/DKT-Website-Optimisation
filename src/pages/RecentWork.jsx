@@ -10,7 +10,7 @@ export default function RecentWork() {
       <AnimatedShapes density="low" />
       <div className="relative mx-auto max-w-7xl">
         <Link to="/">
-          <button className="mb-10 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]">
+          <button className="mb-10 inline-flex cursor-pointer items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]">
             ← Back to Home
           </button>
         </Link>

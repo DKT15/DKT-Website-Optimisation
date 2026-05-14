@@ -3,7 +3,6 @@ import AnimatedShapes from "../components/AnimatedShapes";
 import SectionHeader from "../components/SectionHeader";
 import { testimonials } from "../data/testimonials";
 import Button from "../components/Button";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   CheckCircle2,
@@ -47,12 +46,7 @@ export default function HomePage() {
       <section className="relative min-h-[calc(100vh-77px)] overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8 md:py-24">
         <AnimatedShapes />
         <div className="relative mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
+          <div className="animate-fade-up max-w-3xl">
             <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#00bf63]">
               Website optimisation focused on user experience
               <span className="h-px w-12 bg-[#00bf63]/50" />
@@ -92,7 +86,7 @@ export default function HomePage() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

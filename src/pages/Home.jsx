@@ -115,16 +115,14 @@ export default function HomePage() {
               a larger project.
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
-              {["UX", "Accessibility", "Performance", "Engagement"].map(
-                (tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-[#00bf63]/10 px-3 py-1 text-xs font-semibold text-[#007c42]"
-                  >
-                    {tag}
-                  </span>
-                ),
-              )}
+              {["UX", "Accessibility", "Performance", "SEO"].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-[#00bf63]/10 px-3 py-1 text-xs font-semibold text-[#007c42]"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

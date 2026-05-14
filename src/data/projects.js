@@ -7,7 +7,14 @@ export const projects = [
       "Screenshot of the Office of the Small Business Commissioner website homepage",
     summary:
       "A public-facing website project focused on clearer user journeys, improved usability, accessibility and engagement.",
-    tags: ["UX", "Accessibility", "Engagement", "Performance"],
+    tags: [
+      "UX",
+      "Accessibility",
+      "Engagement",
+      "Performance",
+      "SEO",
+      "Content Architecture",
+    ],
     role: "Led the relaunch of site and ongoing optimisation across content, performance, structure, usability and engagement.",
     focus:
       "Clearer journeys, better accessibility, improved information structure and practical performance improvements.",

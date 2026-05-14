@@ -3,6 +3,7 @@ import AnimatedShapes from "../components/AnimatedShapes";
 import { ExternalLink, Mail, ArrowRight } from "lucide-react";
 import { projects } from "../data/projects";
 
+// Adding animated shapes and mapping through project.js to get info for cards to be displayed on recent work page.
 export default function RecentWork() {
   return (
     <main className="relative overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8">
@@ -93,15 +94,18 @@ export default function RecentWork() {
                 </div>
               </div>
 
+              {/* Conditionally rendering project link for now. */}
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#00bf63] px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-[#18d875]"
-                >
-                  View Live Website <ExternalLink size={16} />
-                </a>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#00bf63] px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-[#18d875]"
+                  >
+                    View Live Website <ExternalLink size={16} />
+                  </a>
+                )}
 
                 <Link
                   to="/contact"
@@ -134,7 +138,7 @@ export default function RecentWork() {
             to="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#00bf63] px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-[#18d875]"
           >
-            Start a conversation <ArrowRight size={16} />
+            Get in touch <ArrowRight size={16} />
           </Link>
         </section>
       </div>

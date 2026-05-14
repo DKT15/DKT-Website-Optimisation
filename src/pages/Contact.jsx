@@ -1,4 +1,4 @@
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, ArrowLeft } from "lucide-react";
 import AnimatedShapes from "../components/AnimatedShapes";
 import { FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
@@ -66,7 +66,7 @@ export default function ContactPage() {
             to="/"
             className="mb-10 inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]"
           >
-            ← Back to Home
+            <ArrowLeft size={18} /> Back to Home
           </Link>
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">
             Get in touch

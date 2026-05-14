@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import AnimatedShapes from "../components/AnimatedShapes";
-import { ExternalLink, Mail, ArrowRight } from "lucide-react";
+import { ExternalLink, Mail, ArrowRight, ArrowLeft } from "lucide-react";
 import { projects } from "../data/projects";
 
 // Adding animated shapes and mapping through project.js to get info for cards to be displayed on recent work page.
@@ -13,7 +13,7 @@ export default function RecentWork() {
           to="/"
           className="mb-10 inline-flex cursor-pointer items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]"
         >
-          ← Back to Home
+          <ArrowLeft size={18} /> Back to Home
         </Link>
         <section className="max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">
@@ -25,7 +25,7 @@ export default function RecentWork() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-            A selection of projects focused on improving usability,
+            A selection of projects focused on improving usability, visibility
             accessibility, performance, information structure and user journeys.
           </p>
         </section>

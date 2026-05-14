@@ -17,7 +17,7 @@ export const projects = [
     ],
     role: "Led the relaunch of site and ongoing optimisation across content, performance, structure, usability and engagement.",
     focus:
-      "Clearer journeys, better accessibility, improved information structure and practical performance improvements.",
+      "Clearer journeys, better accessibility, improved information structure, stronger visibility and practical performance improvements.",
     recognition:
       "The OSBC website was later recognised with a Vega Award as part of wider project delivery.",
     link: "https://www.smallbusinesscommissioner.gov.uk/",

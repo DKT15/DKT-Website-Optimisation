@@ -20,7 +20,7 @@ export default function HomePage() {
   const services = [
     {
       icon: Search,
-      title: "Website Audits",
+      title: "Website Audits & Recommendations",
       text: "A clear review of what may be limiting your website’s UX, SEO, speed and accessibility.",
     },
     {
@@ -188,10 +188,7 @@ export default function HomePage() {
                 "Plan",
                 "You receive clear priorities based on what will be most useful.",
               ],
-              [
-                "Optimise",
-                "I implement agreed improvements across UX, SEO and performance.",
-              ],
+              ["Optimise", "I implement agreed improvements across your site."],
               ["Review", "You get a simple summary of what changed and why."],
             ].map(([title, text], index) => (
               <div

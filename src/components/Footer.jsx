@@ -10,7 +10,7 @@ export default function Footer() {
         </p>
         <div className="flex gap-5">
           <a
-            href="/website-optimisation-for-small-businesses.pdf"
+            href="/assets/website-optimisation-for-small-businesses.pdf"
             className="hover:text-[#00bf63] whitespace-nowrap"
             target="_blank"
           >
@@ -25,6 +25,13 @@ export default function Footer() {
           <Link to="/contact" className="hover:text-[#00bf63]">
             Contact
           </Link>
+          <a
+            href="https://www.linkedin.com/in/dant%C3%A9-kellman-thompson-8b720720a/"
+            className="hover:text-[#00bf63] whitespace-nowrap"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </footer>

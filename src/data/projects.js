@@ -17,16 +17,16 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Future Project Title",
+    title: "More projects coming soon",
     summary:
-      "A short summary of the website problem, the improvements made and the outcome.",
-    image: "/projects/osbc-thumbnail.webp",
+      "Additional website optimisation case studies will be added here as they become available.",
+    image: "/projects/coming-soon.webp",
     imageAlt:
       "Screenshot of the Office of the Small Business Commissioner website homepage",
     tags: ["UX", "SEO", "Performance"],
-    role: "Your role on the project.",
-    focus: "What the project focused on.",
-    recognition: "Outcome, result or notable improvement.",
-    link: "#",
+    role: "Future project details will be added here.",
+    focus: "More examples of website optimisation work",
+    recognition: "Results and outcomes will be shared where available.",
+    link: null,
   },
 ];

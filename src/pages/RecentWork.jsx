@@ -47,7 +47,7 @@ export default function RecentWork() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-black tracking-[-0.03em] text-slate-950">
+                  <h2 className="mt-6 text-2xl font-black tracking-[-0.03em] text-slate-950">
                     {project.title}
                   </h2>
 

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import AnimatedShapes from "../components/AnimatedShapes";
-import { ExternalLink, Mail } from "lucide-react";
+import { ExternalLink, Mail, ArrowRight } from "lucide-react";
 import Button from "../components/Button";
+import { projects } from "../data/projects";
 
 export default function RecentWork() {
   return (
@@ -13,91 +14,126 @@ export default function RecentWork() {
             ← Back to Home
           </button>
         </Link>
-        <div className="max-w-4xl">
+        <section className="max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">
-            Project case study
+            Recent Work
           </p>
-          <h1 className="text-5xl font-black leading-tight tracking-[-0.05em] text-slate-950 md:text-7xl">
-            Office of the Small Business Commissioner & Fair Payment Code
-          </h1>
-          <p className="mt-7 text-lg leading-8 text-slate-700">
-            A public-facing website project focused on clearer user journeys,
-            improved usability, accessibility and engagement. The OSBC website
-            and Fair Payment Code section sit on the same domain, creating one
-            connected platform for users.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-2">
-            {[
-              "UX",
-              "Accessibility",
-              "Information architecture",
-              "Engagement",
-              "Performance",
-            ].map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-[#00bf63]/10 px-3 py-1 text-xs font-semibold text-[#007c42]"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
 
-        <section className="mt-16 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Role",
-              text: "Led relaunch activity and ongoing optimisation across content, structure, usability and engagement.",
-            },
-            {
-              title: "Focus",
-              text: "Clearer journeys, better accessibility, improved information structure and practical performance improvements.",
-            },
-            {
-              title: "Recognition",
-              text: "The OSBC website was later recognised with a Vega Award as part of wider project delivery involving external suppliers.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-[1.75rem] border border-slate-200 bg-white/80 p-7 shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+          <h1 className="text-5xl font-black leading-tight tracking-[-0.05em] text-slate-950 md:text-7xl">
+            Selected website optimisation projects.
+          </h1>
+
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
+            A selection of projects focused on improving usability,
+            accessibility, performance, information structure and user journeys.
+          </p>
+        </section>
+
+        <section className="mt-14 grid gap-6 lg:grid-cols-2">
+          {projects.map((project) => (
+            <article
+              key={project.id}
+              className="rounded-[2rem] border border-slate-200 bg-white/80 p-7 shadow-lg shadow-slate-900/5 backdrop-blur-xl md:p-8"
             >
-              <h3 className="text-xl font-black text-slate-950">
-                {item.title}
-              </h3>
-              <p className="mt-4 leading-7 text-slate-600">{item.text}</p>
-            </div>
+              <div className="overflow-hidden rounded-2xl border border-slate-200">
+                <img
+                  src={project.image}
+                  alt={project.imageAlt}
+                  width="1200"
+                  height="700"
+                  loading="lazy"
+                  className="h-56 w-full object-cotain object-top"
+                />
+              </div>
+              <div>
+                <h2 className="text-2xl font-black tracking-[-0.03em] text-slate-950">
+                  {project.title}
+                </h2>
+
+                <p className="mt-4 leading-7 text-slate-700">
+                  {project.summary}
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-[#00bf63]/10 px-3 py-1 text-xs font-semibold text-[#007c42]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                <div>
+                  <h3 className="text-sm font-black text-slate-950">Role</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {project.role}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-black text-slate-950">Focus</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {project.focus}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-black text-slate-950">
+                    Recognition
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {project.recognition}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#00bf63] px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-[#18d875]"
+                >
+                  View Live Website <ExternalLink size={16} />
+                </a>
+
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-bold text-slate-900 transition hover:border-[#00bf63] hover:text-[#00bf63]"
+                >
+                  Discuss your website <Mail size={16} />
+                </Link>
+              </div>
+            </article>
           ))}
         </section>
 
-        <section className="mt-16 rounded-[2rem] border border-[#00bf63]/20 bg-white/70 p-8 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">
+        <section className="mt-10 rounded-[2rem] border border-[#00bf63]/20 bg-white/70 p-8 shadow-xl shadow-slate-900/5 backdrop-blur-xl md:p-10">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">
             What this shows
           </p>
-          <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-950">
+
+          <h2 className="text-3xl font-black tracking-[-0.03em] text-slate-950">
             Experience improving real websites with real users.
           </h2>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
-            This project demonstrates the same type of thinking I bring to small
-            business websites: making content easier to understand, reducing
+
+          <p className="mt-4 max-w-3xl leading-7 text-slate-700">
+            These projects show the type of practical thinking I bring to
+            website optimisation: making content easier to understand, reducing
             friction, improving user journeys and helping visitors take the next
             step with confidence.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="https://www.smallbusinesscommissioner.gov.uk/"
-              className="inline-flex items-center gap-2 rounded-full bg-[#00bf63] px-6 py-4 text-sm font-bold text-slate-950 hover:bg-[#16d978]"
-              target="_blank"
-            >
-              View Live Website <ExternalLink size={18} />
-            </a>
-            <Link to="/contact">
-              <Button className="cursor-pointer" variant="secondary">
-                Discuss your website <Mail size={18} />
-              </Button>
-            </Link>
-          </div>
+
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#00bf63] px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-[#18d875]"
+          >
+            Start a conversation <ArrowRight size={16} />
+          </Link>
         </section>
       </div>
     </main>

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import AnimatedShapes from "../components/AnimatedShapes";
 import { ExternalLink, Mail, ArrowRight } from "lucide-react";
-import Button from "../components/Button";
 import { projects } from "../data/projects";
 
 export default function RecentWork() {
@@ -33,61 +32,64 @@ export default function RecentWork() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="rounded-[2rem] border border-slate-200 bg-white/80 p-7 shadow-lg shadow-slate-900/5 backdrop-blur-xl md:p-8"
+              className="flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white/80 p-7 shadow-lg shadow-slate-900/5 backdrop-blur-xl md:p-8"
             >
-              <div className="overflow-hidden rounded-2xl border border-slate-200">
-                <img
-                  src={project.image}
-                  alt={project.imageAlt}
-                  width="1200"
-                  height="700"
-                  loading="lazy"
-                  className="h-56 w-full object-cotain object-top"
-                />
-              </div>
-              <div>
-                <h2 className="text-2xl font-black tracking-[-0.03em] text-slate-950">
-                  {project.title}
-                </h2>
-
-                <p className="mt-4 leading-7 text-slate-700">
-                  {project.summary}
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[#00bf63]/10 px-3 py-1 text-xs font-semibold text-[#007c42]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8 grid gap-4 md:grid-cols-3">
-                <div>
-                  <h3 className="text-sm font-black text-slate-950">Role</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {project.role}
-                  </p>
+              <div className="flex-1">
+                <div className="overflow-hidden rounded-2xl border border-slate-200">
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                    className="block h-auto w-full"
+                  />
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-black text-slate-950">Focus</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {project.focus}
+                  <h2 className="text-2xl font-black tracking-[-0.03em] text-slate-950">
+                    {project.title}
+                  </h2>
+
+                  <p className="mt-4 leading-7 text-slate-700">
+                    {project.summary}
                   </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-[#00bf63]/10 px-3 py-1 text-xs font-semibold text-[#007c42]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className="text-sm font-black text-slate-950">
-                    Recognition
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
-                    {project.recognition}
-                  </p>
+                <div className="mt-8 grid gap-4 md:grid-cols-3">
+                  <div>
+                    <h3 className="text-sm font-black text-slate-950">Role</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      {project.role}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-black text-slate-950">Focus</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      {project.focus}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-black text-slate-950">
+                      Recognition
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      {project.recognition}
+                    </p>
+                  </div>
                 </div>
               </div>
 

@@ -20,6 +20,9 @@ export const projects = [
     title: "Future Project Title",
     summary:
       "A short summary of the website problem, the improvements made and the outcome.",
+    image: "/projects/osbc-thumbnail.webp",
+    imageAlt:
+      "Screenshot of the Office of the Small Business Commissioner website homepage",
     tags: ["UX", "SEO", "Performance"],
     role: "Your role on the project.",
     focus: "What the project focused on.",

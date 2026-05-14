@@ -122,7 +122,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/recentwork"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#008a49] hover:text-[#00bf63]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#00bf63]/30 bg-white/70 px-5 py-3 text-sm font-bold text-[#008a49] transition hover:border-[#00bf63] hover:text-[#00bf63]"
               >
                 View More Projects <ArrowRight size={16} />
               </Link>

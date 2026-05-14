@@ -280,8 +280,8 @@ export default function HomePage() {
           />
           <div className="text-lg leading-8 text-slate-700">
             <p>
-              I’m Danté Kellman-Thompson, a Website Optimisation Specialist with
-              experience managing, relaunching and improving public-facing
+              I am Danté Kellman-Thompson, a Website Optimisation Specialist
+              with experience managing, relaunching and improving public-facing
               websites at a national level.
             </p>
             <p className="mt-5">

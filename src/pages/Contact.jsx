@@ -75,8 +75,8 @@ export default function ContactPage() {
             Let’s improve your website.
           </h1>
           <p className="mt-6 max-w-md text-lg leading-8 text-slate-700">
-            Fill out the form and I’ll get back to you as soon as possible. You
-            can also email me directly.
+            Fill out the form and I will get back to you as soon as possible.
+            You can also email me directly.
           </p>
           <div className="mt-10 space-y-5 text-slate-700">
             <a

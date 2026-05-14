@@ -61,11 +61,12 @@ export default function HomePage() {
               visitors to understand your business and get in touch.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-              <Link to="/contact">
-                <Button className="w-full rounded-2xl px-6 py-4 sm:w-auto">
-                  Request a Website Review <ArrowRight size={18} />
-                </Button>
-              </Link>
+              <Button
+                to="/contact"
+                className="w-full rounded-2xl px-6 py-4 sm:w-auto"
+              >
+                Request a Website Review <ArrowRight size={18} />
+              </Button>
               <Button
                 href="/website-optimisation-for-small-businesses.pdf"
                 variant="secondary"
@@ -304,11 +305,9 @@ export default function HomePage() {
               Send a few details and I’ll get back to you as soon as possible.
             </p>
           </div>
-          <Link to="/contact">
-            <Button>
-              Go to contact form <Send size={18} />
-            </Button>
-          </Link>
+          <Button to="/contact">
+            Go to contact form <Send size={18} />
+          </Button>
         </div>
       </section>
     </main>

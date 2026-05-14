@@ -9,10 +9,11 @@ export default function RecentWork() {
     <main className="relative overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8">
       <AnimatedShapes density="low" />
       <div className="relative mx-auto max-w-7xl">
-        <Link to="/">
-          <button className="mb-10 inline-flex cursor-pointer items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]">
-            ← Back to Home
-          </button>
+        <Link
+          to="/"
+          className="mb-10 inline-flex cursor-pointer items-center gap-2 rounded-full border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 hover:text-[#00bf63]"
+        >
+          ← Back to Home
         </Link>
         <section className="max-w-4xl">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#00bf63]">

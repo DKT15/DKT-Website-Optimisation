@@ -9,14 +9,6 @@ export default function Footer() {
           {new Date().getFullYear()} Danté Kellman-Thompson
         </p>
         <div className="flex gap-5">
-          <a
-            href="/assets/website-optimisation-for-small-businesses.pdf"
-            className="hover:text-[#00bf63] whitespace-nowrap"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            One-Pager
-          </a>
           <Link
             to="/recentwork"
             className="hover:text-[#00bf63] whitespace-nowrap"
@@ -26,13 +18,12 @@ export default function Footer() {
           <Link to="/contact" className="hover:text-[#00bf63]">
             Contact
           </Link>
-          <a
-            href="https://www.linkedin.com/in/dant%C3%A9-kellman-thompson-8b720720a/"
+          <Link
+            to="/privacypolicy"
             className="hover:text-[#00bf63] whitespace-nowrap"
-            target="_blank"
           >
-            LinkedIn
-          </a>
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>

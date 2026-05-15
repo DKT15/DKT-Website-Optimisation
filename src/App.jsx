@@ -5,6 +5,7 @@ import RecentWork from "./pages/RecentWork";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route index element={<Homepage />} />
             <Route path="recentwork" element={<RecentWork />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="privacypolicy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

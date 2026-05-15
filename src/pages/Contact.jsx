@@ -114,7 +114,7 @@ export default function ContactPage() {
             </h2>
 
             <p className="mt-4 leading-7 text-slate-700">
-              I’ve received your message and look forward to speaking with you
+              I have received your message and look forward to speaking with you
               soon.
             </p>
             <button

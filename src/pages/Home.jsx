@@ -69,6 +69,8 @@ export default function HomePage() {
               </Button>
               <Button
                 href="/assets/website-optimisation-for-small-businesses.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
                 variant="secondary"
                 className="w-full rounded-2xl px-6 py-4 sm:w-auto"
               >
@@ -299,7 +301,7 @@ export default function HomePage() {
               Ready to improve your website?
             </h2>
             <p className="mt-3 text-slate-600">
-              Send a few details and I’ll get back to you as soon as possible.
+              Send a few details and I will get back to you as soon as possible.
             </p>
           </div>
           <Button to="/contact">

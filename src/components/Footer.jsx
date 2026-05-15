@@ -13,6 +13,7 @@ export default function Footer() {
             href="/assets/website-optimisation-for-small-businesses.pdf"
             className="hover:text-[#00bf63] whitespace-nowrap"
             target="_blank"
+            rel="noopener noreferrer"
           >
             One-Pager
           </a>

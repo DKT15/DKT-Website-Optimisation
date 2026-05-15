@@ -43,7 +43,7 @@ export default function RecentWork() {
                     alt={project.imageAlt}
                     width="1200"
                     height="700"
-                    loading="lazy"
+                    loading={index < 2 ? "eager" : "lazy"} // first two projects load immediately and the others utilise lazy loading.
                     className="block h-auto w-full"
                   />
                 </div>

@@ -31,7 +31,7 @@ export default function RecentWork() {
         </section>
 
         <section className="mt-14 grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <article
               key={project.id}
               className="flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white/80 p-7 shadow-lg shadow-slate-900/5 backdrop-blur-xl md:p-8"

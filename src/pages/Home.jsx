@@ -68,7 +68,7 @@ export default function HomePage() {
                 Request a Website Review <ArrowRight size={18} />
               </Button>
               <Button
-                href="/website-optimisation-for-small-businesses.pdf"
+                href="/assets/website-optimisation-for-small-businesses.pdf"
                 variant="secondary"
                 className="w-full rounded-2xl px-6 py-4 sm:w-auto"
               >

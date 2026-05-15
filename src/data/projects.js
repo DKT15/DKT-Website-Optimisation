@@ -28,8 +28,7 @@ export const projects = [
     summary:
       "Additional website optimisation case studies will be added here as they become available.",
     image: "/projects/coming-soon.webp",
-    imageAlt:
-      "Screenshot of the Office of the Small Business Commissioner website homepage",
+    imageAlt: "Image of the words coming soon!",
     tags: ["UX", "SEO", "Performance"],
     role: "Future project details will be added here.",
     focus: "More examples of website optimisation work",

@@ -77,17 +77,14 @@ export default function PrivacyPolicy() {
                 third-party email delivery service. EmailJS processes form data
                 in order to deliver enquiries to my email inbox.
               </p>
-              <p className="mt-3 leading-7">
-                You can read EmailJS privacy policy on their{" "}
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.emailjs.com/legal/privacy-policy/"
-                  className="mt-3 inline-flex font-bold text-[#008a49] hover:text-[#00bf63]"
-                >
-                  website.
-                </a>
-              </p>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://www.emailjs.com/legal/privacy-policy/"
+                className="mt-3 inline-flex font-bold text-[#008a49] hover:text-[#00bf63]"
+              >
+                You can read EmailJS privacy policy on their website.
+              </a>
             </section>
 
             <section>

@@ -48,7 +48,7 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl">
           <div className="animate-fade-up max-w-3xl">
             <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#00bf63]">
-              Website optimisation focused on user experience
+              Website optimisation for small businesses
               <span className="h-px w-12 bg-[#00bf63]/50" />
             </p>
             <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.05em] text-slate-950 sm:text-6xl md:text-8xl">
@@ -56,9 +56,9 @@ export default function HomePage() {
               <span className="text-[#00bf63]">better.</span>
             </h1>
             <p className="mt-8 max-w-xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
-              I help small businesses improve underperforming websites through
-              better usability, visibility and performance, making it easier for
-              visitors to understand your business and get in touch.
+              I help small and micro businesses improve underperforming websites
+              through better usability, visibility and performance, making it
+              easier for visitors to understand your business and get in touch.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Button

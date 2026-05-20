@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://dantekellman.co.uk/sitemap.xml

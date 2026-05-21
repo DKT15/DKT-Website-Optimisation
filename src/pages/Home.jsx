@@ -21,7 +21,7 @@ export default function HomePage() {
   const services = [
     {
       icon: Search,
-      title: "Website Audits & Recommendations",
+      title: "Website Audits & Insights",
       text: "A clear review of what may be limiting your website’s usability, search and AI visibility, performance, accessibility and trust.",
     },
     {

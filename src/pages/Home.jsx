@@ -13,6 +13,7 @@ import {
   Search,
   Send,
   ShieldCheck,
+  Sparkles,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -21,7 +22,7 @@ export default function HomePage() {
     {
       icon: Search,
       title: "Website Audits & Recommendations",
-      text: "A clear review of what may be limiting your website’s UX, SEO, speed and accessibility.",
+      text: "A clear review of what may be limiting your website’s usability, search and AI visibility, performance, accessibility and trust.",
     },
     {
       icon: MousePointerClick,
@@ -37,6 +38,11 @@ export default function HomePage() {
       icon: ShieldCheck,
       title: "Accessibility Improvements",
       text: "Improvements that make your website easier to use for a wider range of visitors.",
+    },
+    {
+      icon: Sparkles,
+      title: "AI Search Visibility (AEO/GEO)",
+      text: "Improvements that help your website appear more clearly in AI-powered search tools and modern search experiences.",
     },
   ];
 
@@ -150,7 +156,7 @@ export default function HomePage() {
             title="How I can help"
             text="Practical website improvements focused on usability, visibility, performance and trust."
           />
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => {
               const Icon = service.icon;
               return (

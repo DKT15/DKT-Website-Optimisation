@@ -5,19 +5,8 @@
   functions = "netlify/functions"
 
 [[redirects]]
-  from = "https://dktweboptimisation.netlify.app/*"
+  from = "/*"
   to = "https://dantekellman.co.uk/:splat"
   status = 301
   force = true
-
-[[redirects]]
-  from = "http://dantekellman.co.uk/*"
-  to = "https://dantekellman.co.uk/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.dantekellman.co.uk/*"
-  to = "https://dantekellman.co.uk/:splat"
-  status = 301
-  force = true
+  conditions = {Host = ["dktweboptimisation.netlify.app"]}

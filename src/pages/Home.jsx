@@ -52,7 +52,7 @@ export default function HomePage() {
     },
   ];
 
-  // First two sectinos to have animated shapes.
+  // First two sectinos have animated shapes.
   return (
     <main>
       <section className="relative min-h-[calc(100vh-77px)] overflow-hidden bg-[#eef4f0] px-5 py-20 md:px-8 md:py-24">

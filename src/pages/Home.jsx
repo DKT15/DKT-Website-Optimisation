@@ -14,6 +14,7 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
+  MapPinned,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -41,8 +42,13 @@ export default function HomePage() {
     },
     {
       icon: Sparkles,
-      title: "AI Search Visibility (AEO/GEO)",
+      title: "AI Search Visibility",
       text: "Improvements that help your website appear more clearly in AI-powered search tools and modern search experiences.",
+    },
+    {
+      icon: MapPinned,
+      title: "Google Business Profile Optimisation",
+      text: "Improvements to your Google Business Profile to help customers find your business, understand your services and get in touch more easily.",
     },
   ];
 
